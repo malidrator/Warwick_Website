@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warwick - Statistiken</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigationsleiste -->
+    <div class="navbar">
+        <a href="index.html">Startseite</a>
+        <a href="abilities.html">Fähigkeiten</a>
+        <a href="tips.html">Tipps & Tricks</a>
+        <a href="stats.html">Statistiken</a>
+        <a href="jungle-paths.html">Jungle-Pfade</a>
+        <a href="skins.html">Skins</a>
+    </div>
+
+    <!-- Hauptinhalt -->
+    <div class="container">
+        <header>
+            <h1>Warwick - Statistiken</h1>
+        </header>
+        <section>
+            <h2>Statistikübersicht</h2>
+            <p>Hier sind Warwicks Hauptstatistiken aufgelistet:</p>
+            <ul>
+                <li>Leben: 90</li>
+                <li>Schaden: 70</li>
+                <li>Tempo: 80</li>
+                <li>Rüstung: 60</li>
+                <li>Magieresistenz: 50</li>
+            </ul>
+            <canvas id="statChart" width="400" height="400"></canvas>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                const ctx = document.getElementById('statChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Leben', 'Schaden', 'Tempo', 'Rüstung', 'Magieresistenz'],
+                        datasets: [{
+                            label: 'Warwick Stats',
+                            data: [90, 70, 80, 60, 50],
+                            backgroundColor: 'rgba(255, 70, 85, 0.2)',
+                            borderColor: '#ff4655',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            r: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        </section>
+    </div>
+
+</body>
+</html>
